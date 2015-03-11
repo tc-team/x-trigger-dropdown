@@ -1,0 +1,7 @@
+{
+  "name": "x-trigger-dropdown#gh-pages",
+  "private": true,
+  "dependencies": {
+    "x-trigger-dropdown": "tc-team/x-trigger-dropdown#master"
+  }
+}
