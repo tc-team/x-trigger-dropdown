@@ -1,0 +1,53 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+
+<!--
+Element to toggle core-dropdown
+
+##### Example
+
+    <x-trigger-dropdown icon="more-vert">
+        <core-dropdown halign="right">
+            <paper-item>
+                <core-icon icon="delete"></core-icon>
+                Delete
+            </paper-item>
+            <paper-item>
+                <core-icon icon="create"></core-icon>
+                Edit
+            </paper-item>
+        </core-dropdown>
+    </x-trigger-dropdown>
+@element x-trigger-dropdown
+@blurb Element to toggle core-dropdown
+@status alpha
+@homepage https://github.com/tc-team/x-trigger-dropdown
+-->
+<polymer-element name="x-trigger-dropdown" extends="core-icon-button" relative on-tap="{{toggle}}">
+    <script>
+        Polymer({
+            /**
+            * The `toggle` method will toggle core-dropdown
+            *
+            * @method toggle
+            * @param {} without parameters
+            * @return {} returns nothing
+            */
+            toggle: function() {
+                if (!this.dropdown) {
+                    this.dropdown = this.querySelector('core-dropdown');
+                }
+            this.dropdown && this.dropdown.toggle();
+            }
+        });
+    </script>
+</polymer-element>
